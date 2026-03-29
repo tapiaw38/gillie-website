@@ -26,3 +26,20 @@ Thumbs.db
 
 # Local development
 .astro/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Package manager files (if using alternatives)
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: Build outputs depending on deployment
+temp/
+build/
