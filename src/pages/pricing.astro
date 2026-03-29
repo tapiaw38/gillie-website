@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FAQ from '../components/FAQ.astro';
+---
+
+<Layout title="Precios - Gillie AI" description="Planes y precios de Gillie AI. Elige el plan perfecto para tu negocio con asistencia inteligente, procesamiento de documentos y más.">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Precios <span class="text-gillie-blue">Transparentes</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Elige el plan que mejor se adapte a tus necesidades. Todos los planes incluyen características esenciales.
+        </p>
+        
+        <!-- Toggle Billing -->
+        <div class="flex items-center justify-center space-x-4 mb-12">
+          <span class="text-gray-700 font-medium">Facturación Mensual</span>
+          <div class="relative">
+            <div class="w-14 h-8 bg-gray-300 rounded-full shadow-inner"></div>
+            <div class="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow transform transition-transform duration-300 translate-x-8"></div>
+          </div>
+          <span class="text-gray-700 font-medium">
+            Facturación Anual
+            <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+              Ahorra 20%
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Plan Básico -->
+        <PricingCard
+          title="Básico"
+          description="Perfecto para individuos y pequeñas empresas"
+          price="$49"
+          period="por mes"
+          features={[
+            "Hasta 1,000 consultas/mes",
+            "Procesamiento de documentos básico",
+            "Soporte por email",
+            "1 usuario incluido",
+            "Integración con WhatsApp",
+            "Base de conocimiento básica",
+            "Actualizaciones mensuales"
+          ]}
+          highlighted={false}
+          buttonText="Comenzar Gratis"
+          buttonVariant="outline"
+        />
+
+        <!-- Plan Profesional -->
+        <PricingCard
+          title="Profesional"
+          description="Para equipos y empresas en crecimiento"
+          price="$149"
+          period="por mes"
+          features={[
+            "Hasta 10,000 consultas/mes",
+            "Procesamiento avanzado de documentos",
+            "Soporte prioritario",
+            "Hasta 5 usuarios",
+            "Integración con WhatsApp y Telegram",
+            "Base de conocimiento avanzada",
+            "API completa",
+            "Análisis de rendimiento",
+            "Actualizaciones semanales"
+          ]}
+          highlighted={true}
+          buttonText="Prueba Gratis 14 Días"
+          buttonVariant="primary"
+        />
+
+        <!-- Plan Empresarial -->
+        <PricingCard
+          title="Empresarial"
+          description="Soluciones personalizadas para grandes organizaciones"
+          price="$499"
+          period="por mes"
+          features={[
+            "Consultas ilimitadas",
+            "Procesamiento de documentos premium",
+            "Soporte 24/7 dedicado",
+            "Usuarios ilimitados",
+            "Todas las integraciones disponibles",
+            "Base de conocimiento personalizada",
+            "API avanzada con webhooks",
+            "Dashboard empresarial",
+            "Entrenamiento personalizado",
+            "SLA 99.9%",
+            "Actualizaciones en tiempo real"
+          ]}
+          highlighted={false}
+          buttonText="Contactar Ventas"
+          buttonVariant="outline"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Comparación Completa de Planes
+        </h2>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="py-4 px-6 text-left font-semibold text-gray-900">Característica</th>
+                  <th class="py-4 px-6 text-center font-semibold text-gray-900">Básico</th>
+                  <th class="py-4 px-6 text-center font-semibold text-gray-900">Profesional</th>
+                  <th class="py-4 px-6 text-center font-semibold text-gray-900">Empresarial</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="py-4 px-6 font-medium text-gray-900">Consultas por mes</td>
+                  <td class="py-4 px-6 text-center">1,000</td>
+                  <td class="py-4 px-6 text-center">10,000</td>
+                  <td class="py-4 px-6 text-center">Ilimitadas</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="py-4 px-6 font-medium text-gray-900">Usuarios</td>
+                  <td class="py-4 px-6 text-center">1</td>
+                  <td class="py-4 px-6 text-center">Hasta 5</td>
+                  <td class="py-4 px-6 text-center">Ilimitados</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-gray-900">Procesamiento de documentos</td>
+                  <td class="py-4 px-6 text-center">✓ Básico</td>
+                  <td class="py-4 px-6 text-center">✓ Avanzado</td>
+                  <td class="py-4 px-6 text-center">✓ Premium</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="py-4 px-6 font-medium text-gray-900">Integración WhatsApp</td>
+                  <td class="py-4 px-6 text-center">✓</td>
+                  <td class="py-4 px-6 text-center">✓</td>
+                  <td class="py-4 px-6 text-center">✓</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-gray-900">Integración Telegram</td>
+                  <td class="py-4 px-6 text-center">-</td>
+                  <td class="py-4 px-6 text-center">✓</td>
+                  <td class="py-4 px-6 text-center">✓</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="py-4 px-6 font-medium text-gray-900">API Access</td>
+                  <td class="py-4 px-6 text-center">Limitado</td>
+                  <td class="py-4 px-6 text-center">Completo</td>
+                  <td class="py-4 px-6 text-center">Avanzado</td>
+                </tr>
+                <tr>
+                  <td class="py-4 px-6 font-medium text-gray-900">Soporte</td>
+                  <td class="py-4 px-6 text-center">Email</td>
+                  <td class="py-4 px-6 text-center">Prioritario</td>
+                  <td class="py-4 px-6 text-center">24/7 Dedicado</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="py-4 px-6 font-medium text-gray-900">SLA</td>
+                  <td class="py-4 px-6 text-center">-</td>
+                  <td class="py-4 px-6 text-center">99.5%</td>
+                  <td class="py-4 px-6 text-center">99.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Preguntas Frecuentes
+        </h2>
+        
+        <FAQ
+          questions={[
+            {
+              question: "¿Puedo cambiar de plan en cualquier momento?",
+              answer: "Sí, puedes actualizar o degradar tu plan en cualquier momento. Los cambios se reflejarán en tu próxima facturación."
+            },
+            {
+              question: "¿Ofrecen prueba gratuita?",
+              answer: "Sí, ofrecemos una prueba gratuita de 14 días para el plan Profesional. No se requiere tarjeta de crédito."
+            },
+            {
+              question: "¿Qué métodos de pago aceptan?",
+              answer: "Aceptamos tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal y transferencias bancarias para planes empresariales."
+            },
+            {
+              question: "¿Puedo cancelar mi suscripción?",
+              answer: "Sí, puedes cancelar tu suscripción en cualquier momento. No hay cargos por cancelación."
+            },
+            {
+              question: "¿Ofrecen descuentos para organizaciones sin fines de lucro?",
+              answer: "Sí, ofrecemos un 30% de descuento para organizaciones sin fines de lucro y educativas. Contáctanos para más información."
+            },
+            {
+              question: "¿Cómo se factura el uso excedente?",
+              answer: "Para el plan Básico, las consultas excedentes se facturan a $0.05 por consulta. Para el plan Profesional, contacta con nuestro equipo para discutir opciones."
+            }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-gillie-blue to-gillie-purple">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Listo para transformar tu negocio con IA?
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+          Únete a miles de empresas que ya usan Gillie AI para automatizar sus procesos y mejorar la productividad.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/api" class="px-8 py-3 bg-white text-gillie-blue font-semibold rounded-lg hover:bg-gray-100 transition duration-300">
+            Probar Gratis
+          </a>
+          <a href="mailto:sales@gillie.ai" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gillie-blue transition duration-300">
+            Contactar Ventas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,346 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Documentación API - Gillie AI';
+const description = 'Documentación completa de la API RESTful de Gillie AI con ejemplos de código, autenticación y endpoints.';
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="pt-20 pb-16 bg-gradient-to-r from-gillie-blue to-gillie-ocean text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Documentación API</h1>
+        <p class="text-xl mb-8 opacity-90">
+          Integra Gillie AI en tus aplicaciones con nuestra API RESTful completa y bien documentada
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#authentication" class="bg-white text-gillie-blue px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+            Autenticación
+          </a>
+          <a href="#endpoints" class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors">
+            Endpoints
+          </a>
+          <a href="#examples" class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors">
+            Ejemplos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentication -->
+  <section id="authentication" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Autenticación</h2>
+        
+        <div class="bg-gray-50 rounded-xl p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-4">API Key</h3>
+          <p class="text-gray-600 mb-6">
+            Todas las solicitudes a la API requieren un token JWT en el header de autorización.
+          </p>
+          
+          <div class="bg-gray-900 rounded-lg p-6 mb-6">
+            <div class="flex items-center mb-4">
+              <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500 mr-4"></div>
+              <span class="text-gray-400 text-sm">Ejemplo de autenticación</span>
+            </div>
+            <pre class="text-sm text-gray-300 overflow-x-auto">
+{`// Obtener API Key
+POST /api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "tu_usuario",
+  "password": "tu_contraseña"
+}
+
+// Respuesta
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer"
+}
+
+// Usar el token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endpoints -->
+  <section id="endpoints" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Endpoints Principales</h2>
+        
+        <!-- Chat Endpoint -->
+        <div class="bg-white rounded-xl p-8 mb-8 shadow-lg">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mr-4">POST</span>
+              <h3 class="text-2xl font-bold inline">/api/v1/chat</h3>
+            </div>
+            <span class="text-gray-500">Chat en tiempo real</span>
+          </div>
+          
+          <p class="text-gray-600 mb-6">
+            Envía mensajes al asistente y recibe respuestas en tiempo real.
+          </p>
+          
+          <div class="bg-gray-900 rounded-lg p-6 mb-6">
+            <pre class="text-sm text-gray-300 overflow-x-auto">
+{`POST /api/v1/chat
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "message": "Hola, ¿cómo estás?",
+  "context": "general",
+  "stream": false
+}
+
+// Respuesta
+{
+  "response": "¡Hola! Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
+  "conversation_id": "conv_123456",
+  "timestamp": "2024-01-15T10:30:00Z"
+}`}
+            </pre>
+          </div>
+        </div>
+
+        <!-- Document Processing -->
+        <div class="bg-white rounded-xl p-8 mb-8 shadow-lg">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mr-4">POST</span>
+              <h3 class="text-2xl font-bold inline">/api/v1/documents/process</h3>
+            </div>
+            <span class="text-gray-500">Procesamiento de documentos</span>
+          </div>
+          
+          <p class="text-gray-600 mb-6">
+            Procesa documentos PDF, imágenes o texto con OCR y análisis inteligente.
+          </p>
+          
+          <div class="bg-gray-900 rounded-lg p-6 mb-6">
+            <pre class="text-sm text-gray-300 overflow-x-auto">
+{`POST /api/v1/documents/process
+Authorization: Bearer YOUR_API_KEY
+Content-Type: multipart/form-data
+
+// Form Data
+file: [archivo PDF o imagen]
+ocr: true
+language: "es"
+
+// Respuesta
+{
+  "document_id": "doc_789012",
+  "text": "Texto extraído del documento...",
+  "pages": 5,
+  "metadata": {
+    "author": "Autor del documento",
+    "title": "Título del documento"
+  },
+  "summary": "Resumen del contenido..."
+}`}
+            </pre>
+          </div>
+        </div>
+
+        <!-- RAG Search -->
+        <div class="bg-white rounded-xl p-8 mb-8 shadow-lg">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold mr-4">POST</span>
+              <h3 class="text-2xl font-bold inline">/api/v1/rag/search</h3>
+            </div>
+            <span class="text-gray-500">Búsqueda RAG</span>
+          </div>
+          
+          <p class="text-gray-600 mb-6">
+            Búsqueda aumentada por recuperación en tus documentos indexados.
+          </p>
+          
+          <div class="bg-gray-900 rounded-lg p-6 mb-6">
+            <pre class="text-sm text-gray-300 overflow-x-auto">
+{`POST /api/v1/rag/search
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "query": "¿Cuáles son los términos del contrato?",
+  "collection": "contratos",
+  "limit": 5
+}
+
+// Respuesta
+{
+  "results": [
+    {
+      "document_id": "doc_123",
+      "text": "Fragmento relevante del documento...",
+      "score": 0.95,
+      "metadata": {
+        "page": 3,
+        "source": "contrato_empresa.pdf"
+      }
+    }
+  ],
+  "answer": "Respuesta generada basada en los documentos encontrados..."
+}`}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples -->
+  <section id="examples" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Ejemplos de Código</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Python Example -->
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-6">
+              <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                <span class="text-2xl font-bold text-blue-600">🐍</span>
+              </div>
+              <h3 class="text-2xl font-bold">Python</h3>
+            </div>
+            
+            <div class="bg-gray-900 rounded-lg p-6">
+              <pre class="text-sm text-gray-300 overflow-x-auto">
+{`import requests
+
+class GillieClient:
+    def __init__(self, api_key, base_url="https://api.gillie.ai"):
+        self.api_key = api_key
+        self.base_url = base_url
+        self.headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+    
+    def chat(self, message, context="general"):
+        response = requests.post(
+            f"{self.base_url}/api/v1/chat",
+            headers=self.headers,
+            json={"message": message, "context": context}
+        )
+        return response.json()
+    
+    def process_document(self, file_path):
+        with open(file_path, 'rb') as f:
+            files = {'file': f}
+            response = requests.post(
+                f"{self.base_url}/api/v1/documents/process",
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                files=files,
+                data={'ocr': 'true', 'language': 'es'}
+            )
+        return response.json()
+
+# Uso
+client = GillieClient(api_key="TU_API_KEY")
+response = client.chat("Hola, procesa este documento")
+print(response["response"])`}
+              </pre>
+            </div>
+          </div>
+
+          <!-- JavaScript Example -->
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-6">
+              <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                <span class="text-2xl font-bold text-yellow-600">⚡</span>
+              </div>
+              <h3 class="text-2xl font-bold">JavaScript</h3>
+            </div>
+            
+            <div class="bg-gray-900 rounded-lg p-6">
+              <pre class="text-sm text-gray-300 overflow-x-auto">
+{`class GillieClient {
+  constructor(apiKey, baseUrl = 'https://api.gillie.ai') {
+    this.apiKey = apiKey;
+    this.baseUrl = baseUrl;
+  }
+
+  async chat(message, context = 'general') {
+    const response = await fetch(\`\${this.baseUrl}/api/v1/chat\`, {
+      method: 'POST',
+      headers: {
+        'Authorization': \`Bearer \${this.apiKey}\`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message, context })
+    });
+    return await response.json();
+  }
+
+  async processDocument(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('ocr', 'true');
+    formData.append('language', 'es');
+
+    const response = await fetch(\`\${this.baseUrl}/api/v1/documents/process\`, {
+      method: 'POST',
+      headers: {
+        'Authorization': \`Bearer \${this.apiKey}\`
+      },
+      body: formData
+    });
+    return await response.json();
+  }
+}
+
+// Uso
+const client = new GillieClient('TU_API_KEY');
+const result = await client.chat('Hola, ¿cómo estás?');
+console.log(result.response);`}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-r from-gillie-blue to-gillie-ocean">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          ¿Listo para integrar?
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+          Obtén tu API Key y comienza a integrar Gillie AI en tus aplicaciones hoy mismo.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="bg-white text-gillie-blue px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+            Obtener API Key
+          </a>
+          <a href="https://github.com/gillie-ai" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors">
+            Ver en GitHub
+          </a>
+        </div>
+        <p class="mt-6 text-sm opacity-75">
+          Documentación completa • SDKs disponibles • Soporte técnico
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

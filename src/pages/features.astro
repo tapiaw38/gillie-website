@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+---
+
+<Layout title="Características - Gillie AI" description="Descubre todas las características de Gillie AI: procesamiento de documentos, RAG, TTS/STT, integración con WhatsApp y más.">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Características <span class="text-gillie-blue">Potentes</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Gillie AI combina tecnologías de vanguardia para ofrecer una experiencia de asistente inteligente completa y versátil.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Features Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Document Processing -->
+        <FeatureCard
+          icon="📄"
+          title="Procesamiento de Documentos"
+          description="Extrae y analiza información de PDFs, Word, Excel, imágenes y más con precisión."
+          features={[
+            "OCR avanzado para imágenes y PDFs",
+            "Extracción estructurada de datos",
+            "Análisis semántico de contenido",
+            "Soporte multiformato"
+          ]}
+          color="blue"
+        />
+
+        <!-- RAG System -->
+        <FeatureCard
+          icon="🧠"
+          title="Sistema RAG Avanzado"
+          description="Recuperación y generación aumentada para respuestas precisas basadas en tu conocimiento."
+          features={[
+            "Búsqueda semántica contextual",
+            "Base de conocimiento personalizable",
+            "Actualización en tiempo real",
+            "Fuentes múltiples de datos"
+          ]}
+          color="purple"
+        />
+
+        <!-- TTS/STT -->
+        <FeatureCard
+          icon="🎤"
+          title="TTS/STT de Alta Calidad"
+          description="Conversión de texto a voz y voz a texto con voces naturales y reconocimiento preciso."
+          features={[
+            "Voces naturales en múltiples idiomas",
+            "Reconocimiento de voz en tiempo real",
+            "Síntesis de voz personalizable",
+            "Baja latencia"
+          ]}
+          color="green"
+        />
+
+        <!-- WhatsApp Integration -->
+        <FeatureCard
+          icon="💬"
+          title="Integración WhatsApp"
+          description="Conecta Gillie AI con WhatsApp para atención automatizada 24/7."
+          features={[
+            "Respuestas automáticas inteligentes",
+            "Gestión de múltiples chats",
+            "Plantillas personalizables",
+            "Análisis de conversaciones"
+          ]}
+          color="yellow"
+        />
+
+        <!-- API & Webhooks -->
+        <FeatureCard
+          icon="🔌"
+          title="API Completa & Webhooks"
+          description="Integra Gillie AI en tus sistemas existentes con nuestra API robusta."
+          features={[
+            "REST API documentada",
+            "Webhooks en tiempo real",
+            "SDKs para múltiples lenguajes",
+            "Autenticación segura"
+          ]}
+          color="red"
+        />
+
+        <!-- Analytics Dashboard -->
+        <FeatureCard
+          icon="📊"
+          title="Dashboard Analítico"
+          description="Monitorea el rendimiento y obtén insights valiosos sobre el uso de tu asistente."
+          features={[
+            "Métricas en tiempo real",
+            "Reportes personalizables",
+            "Análisis de conversaciones",
+            "Exportación de datos"
+          ]}
+          color="indigo"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Features -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Características en Detalle
+        </h2>
+        
+        <div class="space-y-12">
+          
+          <!-- Document Processing Detail -->
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-start space-x-6">
+              <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">📄</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Procesamiento Avanzado de Documentos</h3>
+                <p class="text-gray-600 mb-6">
+                  Gillie AI puede procesar y entender una amplia variedad de formatos de documentos, extrayendo información relevante y estructurándola para su uso posterior.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex items-center space-x-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">PDFs escaneados y nativos</span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">Documentos Word y Excel</span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">Imágenes con texto (JPG, PNG)</span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">Presentaciones PowerPoint</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RAG System Detail -->
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-start space-x-6">
+              <div class="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">🧠</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Sistema RAG (Retrieval-Augmented Generation)</h3>
+                <p class="text-gray-600 mb-6">
+                  Nuestro sistema RAG combina la potencia de los modelos de lenguaje con tu base de conocimiento específica, proporcionando respuestas precisas y contextualmente relevantes.
+                </p>
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Cómo funciona:</h4>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                      <li>Indexa tu base de conocimiento (documentos, FAQs, manuales)</li>
+                      <li>Analiza consultas en tiempo real para entender el contexto</li>
+                      <li>Recupera información relevante de tu base de conocimiento</li>
+                      <li>Genera respuestas precisas basadas en la información recuperada</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Integration Detail -->
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-start space-x-6">
+              <div class="flex-shrink-0 w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">💬</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Integración con WhatsApp Business</h3>
+                <p class="text-gray-600 mb-6">
+                  Automatiza la atención al cliente y el soporte a través de WhatsApp, la plataforma de mensajería más popular del mundo.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-3">Características principales:</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Respuestas automáticas 24/7</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Transferencia a agentes humanos</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Plantillas de mensajes aprobadas</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-3">Casos de uso:</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Soporte técnico automatizado</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Ventas y consultas de productos</span>
+                      </li>
+                      <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <span>Recordatorios y notificaciones</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Casos de Uso Comunes
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">🏢</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Empresas</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>Atención al cliente automatizada</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>Procesamiento de documentos internos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>Asistente virtual para empleados</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 shadow-lg">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">🎓</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Educación</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span>Tutor virtual para estudiantes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span>Procesamiento de materiales educativos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span>Asistente para investigación</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-8 shadow-lg">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">⚕️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Salud</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Procesamiento de historiales médicos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Asistente para pacientes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Análisis de documentos médicos</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-gillie-blue to-gillie-purple">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Quieres ver estas características en acción?
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+          Agenda una demostración personalizada y descubre cómo Gillie AI puede transformar tu negocio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/api" class="px-8 py-3 bg-white text-gillie-blue font-semibold rounded-lg hover:bg-gray-100 transition duration-300">
+            Probar Demo
+          </a>
+          <a href="/pricing" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gillie-blue transition duration-300">
+            Ver Planes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

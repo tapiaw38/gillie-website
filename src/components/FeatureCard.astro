@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  gradient?: string;
+}
+
+const { icon: iconName, title, description, gradient = 'from-blue-500 to-cyan-500' } = Astro.props;
+---
+
+<div class="feature-card group relative bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+  <!-- Subtle gradient accent top border -->
+  <div class={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+
+  <!-- Icon container -->
+  <div class={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} mb-5 shadow-md`}>
+    <Icon name={iconName} class="w-6 h-6 text-white" />
+  </div>
+
+  <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+  <p class="text-gray-500 text-sm leading-relaxed">{description}</p>
+</div>

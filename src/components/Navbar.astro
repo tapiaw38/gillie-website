@@ -1,0 +1,91 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="bg-white/70 backdrop-blur-xl border-b border-gray-200/60 shadow-sm">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <img src="/assets/gillie-logo.png" alt="Gillie AI" class="h-10 w-10 md:h-14 md:w-14 object-contain invert group-hover:scale-105 transition-transform duration-200" />
+          <span class="text-xl font-bold text-gray-900">Gillie <span class="text-gillie-blue">AI</span></span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="flex items-center gap-1.5 text-gray-600 hover:text-gillie-blue font-medium transition-colors text-sm">
+            <Icon name="lucide:layers" class="w-4 h-4" />Características
+          </a>
+          <a href="#how-it-works" class="flex items-center gap-1.5 text-gray-600 hover:text-gillie-blue font-medium transition-colors text-sm">
+            <Icon name="lucide:map" class="w-4 h-4" />Cómo Funciona
+          </a>
+          <a href="#use-cases" class="flex items-center gap-1.5 text-gray-600 hover:text-gillie-blue font-medium transition-colors text-sm">
+            <Icon name="lucide:briefcase" class="w-4 h-4" />Casos de Uso
+          </a>
+          <a href="#integrations" class="flex items-center gap-1.5 text-gray-600 hover:text-gillie-blue font-medium transition-colors text-sm">
+            <Icon name="lucide:plug" class="w-4 h-4" />Integraciones
+          </a>
+          <a href="#api" class="flex items-center gap-1.5 text-gray-600 hover:text-gillie-blue font-medium transition-colors text-sm">
+            <Icon name="lucide:code-2" class="w-4 h-4" />API
+          </a>
+          <a href="#contact" class="btn-primary text-sm py-2.5">
+            <Icon name="lucide:rocket" class="w-4 h-4" />
+            Comenzar
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="menu-button" aria-label="Menú">
+          <Icon name="lucide:menu" class="w-5 h-5 text-gray-700" id="menu-icon-open" />
+          <Icon name="lucide:x" class="w-5 h-5 text-gray-700 hidden" id="menu-icon-close" />
+        </button>
+      </div>
+
+      <!-- Mobile nav -->
+      <div class="md:hidden hidden mt-4 pb-2 border-t border-gray-100 pt-4 space-y-1" id="mobile-menu">
+        <a href="#features" class="flex items-center gap-2 text-gray-700 hover:text-gillie-blue font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <Icon name="lucide:layers" class="w-4 h-4" />Características
+        </a>
+        <a href="#how-it-works" class="flex items-center gap-2 text-gray-700 hover:text-gillie-blue font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <Icon name="lucide:map" class="w-4 h-4" />Cómo Funciona
+        </a>
+        <a href="#use-cases" class="flex items-center gap-2 text-gray-700 hover:text-gillie-blue font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <Icon name="lucide:briefcase" class="w-4 h-4" />Casos de Uso
+        </a>
+        <a href="#api" class="flex items-center gap-2 text-gray-700 hover:text-gillie-blue font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <Icon name="lucide:code-2" class="w-4 h-4" />API
+        </a>
+        <div class="pt-2">
+          <a href="#contact" class="btn-primary w-full justify-center">
+            <Icon name="lucide:rocket" class="w-4 h-4" />
+            Comenzar
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const btn = document.getElementById('menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+  });
+
+  // Close mobile menu when clicking a link
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>
