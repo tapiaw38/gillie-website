@@ -5,5 +5,6 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [tailwind(), icon()],
   output: 'static',
-  site: 'https://gillie.ai'
+  site: 'https://tapiaw38.github.io',
+  base: '/gillie-website'
 });

@@ -20,17 +20,15 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        working-directory: ecliptic-ellipse
         run: npm ci
 
       - name: Build
-        working-directory: ecliptic-ellipse
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ecliptic-ellipse/dist
+          path: ./dist
 
   deploy:
     needs: build
