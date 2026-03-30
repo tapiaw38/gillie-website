@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 
 export default defineConfig({
-  integrations: [tailwind(), icon()],
+  integrations: [tailwind(), icon({ include: { lucide: ['*'] } })],
   output: 'static',
   site: 'https://tapiaw38.github.io',
-  base: '/gillie-website'
+  base: process.env.GITHUB_ACTIONS ? '/gillie-website' : '/'
 });

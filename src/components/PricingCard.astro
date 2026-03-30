@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  period: string;
+  features: string[];
+  highlighted?: boolean;
+  buttonText: string;
+  buttonVariant: 'primary' | 'outline';
+}
+
+const { title, description, price, period, features, highlighted = false, buttonText, buttonVariant } = Astro.props;
+---
+
+<div class={`relative rounded-2xl p-8 flex flex-col ${highlighted ? 'bg-gillie-blue text-white shadow-2xl scale-105' : 'bg-white text-gray-900 shadow-lg border border-gray-200'}`}>
+  {highlighted && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+      <span class="bg-gillie-purple text-white text-sm font-semibold px-4 py-1 rounded-full">
+        Más Popular
+      </span>
+    </div>
+  )}
+
+  <div class="mb-6">
+    <h3 class={`text-xl font-bold mb-2 ${highlighted ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
+    <p class={`text-sm ${highlighted ? 'text-blue-100' : 'text-gray-500'}`}>{description}</p>
+  </div>
+
+  <div class="mb-6">
+    <span class={`text-4xl font-bold ${highlighted ? 'text-white' : 'text-gray-900'}`}>{price}</span>
+    <span class={`text-sm ml-1 ${highlighted ? 'text-blue-100' : 'text-gray-500'}`}>{period}</span>
+  </div>
+
+  <ul class="space-y-3 mb-8 flex-1">
+    {features.map((feature) => (
+      <li class="flex items-start gap-2">
+        <svg class={`w-5 h-5 mt-0.5 flex-shrink-0 ${highlighted ? 'text-blue-200' : 'text-gillie-blue'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span class={`text-sm ${highlighted ? 'text-blue-100' : 'text-gray-600'}`}>{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href="#"
+    class={`w-full text-center py-3 px-6 rounded-lg font-semibold transition duration-300 ${
+      buttonVariant === 'primary'
+        ? highlighted
+          ? 'bg-white text-gillie-blue hover:bg-blue-50'
+          : 'bg-gillie-blue text-white hover:bg-blue-700'
+        : highlighted
+          ? 'border-2 border-white text-white hover:bg-white hover:text-gillie-blue'
+          : 'border-2 border-gillie-blue text-gillie-blue hover:bg-gillie-blue hover:text-white'
+    }`}
+  >
+    {buttonText}
+  </a>
+</div>
