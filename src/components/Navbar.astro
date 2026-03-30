@@ -7,8 +7,8 @@ import { Icon } from 'astro-icon/components';
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 group">
-          <img src="/assets/gillie-logo.png" alt="Gillie AI" class="h-10 w-10 md:h-14 md:w-14 object-contain invert group-hover:scale-105 transition-transform duration-200" />
+        <a href={import.meta.env.BASE_URL} class="flex items-center gap-2 group">
+          <img src={`${import.meta.env.BASE_URL}assets/gillie-logo.png`} alt="Gillie AI" class="h-10 w-10 md:h-14 md:w-14 object-contain invert group-hover:scale-105 transition-transform duration-200" />
           <span class="text-xl font-bold text-gray-900">Gillie <span class="text-gillie-blue">AI</span></span>
         </a>
 
