@@ -11,15 +11,18 @@ export interface Props {
 const { icon: iconName, title, description, gradient = 'from-blue-500 to-cyan-500' } = Astro.props;
 ---
 
-<div class="feature-card group relative bg-white/[0.03] rounded p-7 border border-white/10 hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+<div class="feature-card group relative bg-white/[0.03] rounded-lg p-7 border border-white/10 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] transition-all duration-300 overflow-hidden cursor-pointer">
   <!-- Subtle gradient accent top border -->
   <div class={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
 
+  <!-- Subtle glow on hover -->
+  <div class={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+
   <!-- Icon container -->
-  <div class={`inline-flex items-center justify-center w-12 h-12 rounded bg-gradient-to-br ${gradient} mb-5 shadow-md`}>
+  <div class={`relative inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${gradient} mb-5 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
     <Icon name={iconName} class="w-6 h-6 text-white" />
   </div>
 
-  <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
-  <p class="text-white/60 text-sm leading-relaxed">{description}</p>
+  <h3 class="text-lg font-bold text-white mb-2 group-hover:text-white transition-colors">{title}</h3>
+  <p class="text-white/60 text-sm leading-relaxed group-hover:text-white/70 transition-colors">{description}</p>
 </div>

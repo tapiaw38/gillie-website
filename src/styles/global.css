@@ -38,11 +38,11 @@
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight leading-tight;
   }
 
   .section-subtitle {
-    @apply text-base sm:text-lg text-white/60 mb-10 md:mb-12 max-w-2xl mx-auto;
+    @apply text-base sm:text-lg text-white/70 mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed;
   }
 
   .gradient-text {

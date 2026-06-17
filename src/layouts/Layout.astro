@@ -12,9 +12,9 @@ export interface Props {
   type?: string;
 }
 
-const { 
-  title = 'Gillie AI - Tu Asistente Inteligente', 
-  description = 'Gillie AI es un asistente inteligente que te ayuda con tareas diarias, procesamiento de documentos, y mucho más.',
+const {
+  title = 'Gillie AI - Your Intelligent Assistant',
+  description = 'Gillie AI is an intelligent assistant that helps you with daily tasks, document processing, and much more.',
   image = '/assets/gillie-ocean.png',
   url = 'https://gillie.ai',
   type = 'website'
@@ -22,7 +22,7 @@ const {
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,7 +42,7 @@ const {
   </head>
   <body class="bg-black text-white min-h-screen">
     <Navbar />
-    <main class="pt-20">
+    <main class="pt-16">
       <slot />
     </main>
     <Footer />
