@@ -26,20 +26,21 @@ const navLinks = [
           <span class="text-lg font-bold text-white">Gillie <span class="text-gillie-blue">AI</span></span>
         </a>
 
-        <!-- Desktop nav — text links -->
-        <div class="hidden md:flex items-center gap-6">
-          {navLinks.map(({ href, label }) => (
+        <!-- Desktop nav — icon only -->
+        <div class="hidden md:flex items-center gap-1">
+          {navLinks.map(({ href, icon, label }) => (
             <a
               href={href}
-              class="text-sm text-white/60 hover:text-white transition-colors duration-200"
+              class="group relative flex items-center justify-center w-9 h-9 text-white/50 hover:text-white transition-colors duration-200"
+              title={label}
             >
-              {label}
+              <Icon name={icon} class="w-4 h-4" />
             </a>
           ))}
 
           <!-- CTA button -->
-          <a href="#contact" class="btn-primary text-sm py-2.5 px-5 ml-2">
-            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          <a href="#contact" class="btn-primary text-sm py-2 px-4 ml-3">
+            <Icon name="lucide:rocket" class="w-4 h-4" />
             Get Started
           </a>
         </div>

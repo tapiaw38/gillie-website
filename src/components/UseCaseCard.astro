@@ -12,10 +12,10 @@ export interface Props {
 const { title, description, features, color = 'blue', icon } = Astro.props;
 
 const config = {
-  blue:   { accent: 'text-blue-400',   iconBg: 'bg-blue-500/10',   icon: icon ?? 'lucide:graduation-cap' },
-  green:  { accent: 'text-emerald-400', iconBg: 'bg-emerald-500/10', icon: icon ?? 'lucide:briefcase' },
-  purple: { accent: 'text-violet-400',  iconBg: 'bg-violet-500/10',  icon: icon ?? 'lucide:code-2' },
-  orange: { accent: 'text-orange-400',  iconBg: 'bg-orange-500/10',  icon: icon ?? 'lucide:user' },
+  blue:   { accent: 'text-blue-400',   icon: icon ?? 'lucide:graduation-cap' },
+  green:  { accent: 'text-emerald-400', icon: icon ?? 'lucide:briefcase' },
+  purple: { accent: 'text-violet-400',  icon: icon ?? 'lucide:code-2' },
+  orange: { accent: 'text-orange-400',  icon: icon ?? 'lucide:user' },
 };
 
 const c = config[color];
@@ -25,9 +25,9 @@ const c = config[color];
   <!-- Subtle glow on hover -->
   <div class={`absolute inset-0 bg-gradient-to-br from-${color === 'blue' ? 'blue' : color === 'green' ? 'emerald' : color === 'purple' ? 'violet' : 'orange'}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
 
-  <!-- Icon -->
-  <div class={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg ${c.iconBg} mb-5 group-hover:scale-105 transition-transform duration-300`}>
-    <Icon name={c.icon} class={`w-5 h-5 ${c.accent}`} />
+  <!-- Icon (no background) -->
+  <div class="mb-5">
+    <Icon name={c.icon} class={`w-7 h-7 ${c.accent}`} />
   </div>
 
   <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
