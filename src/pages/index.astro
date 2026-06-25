@@ -9,10 +9,10 @@ import { Icon } from 'astro-icon/components';
 
   <!-- ── HERO ──────────────────────────────────────────────────────────── -->
   <section class="relative pt-4 pb-16 md:pt-6 md:pb-20 overflow-hidden">
-    <!-- Background decoration -->
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-0 left-0 w-[700px] h-[700px] bg-gradient-to-br from-blue-500/15 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-500/15 to-transparent rounded-full blur-3xl"></div>
+    <!-- Background decoration (refined positioning) -->
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-[560px] h-[560px] bg-gillie-blue/[0.08] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-[440px] h-[440px] bg-cyan-500/[0.05] rounded-full blur-3xl"></div>
     </div>
 
     <div class="container mx-auto px-6 max-w-7xl">
@@ -116,7 +116,7 @@ import { Icon } from 'astro-icon/components';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- PC / Local -->
-        <div class="reveal reveal-delay-1 group relative bg-white/[0.03] rounded-lg border border-white/10 p-8 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgb(0,0,0,0.6)] transition-all duration-300 overflow-hidden cursor-pointer">
+        <div class="reveal reveal-delay-1 group relative bg-white/[0.03] rounded-lg border border-white/10 p-8 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-blue-500/30 transition-all duration-300 overflow-hidden">
           <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-blue-500/5 group-hover:bg-blue-500/10 rounded-full blur-2xl pointer-events-none transition-all duration-300"></div>
 
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-500/10 mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
@@ -148,7 +148,7 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <!-- VPS / Server -->
-        <div class="reveal reveal-delay-2 group relative bg-white/[0.03] rounded-lg border border-white/10 p-8 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgb(0,0,0,0.6)] transition-all duration-300 overflow-hidden cursor-pointer">
+        <div class="reveal reveal-delay-2 group relative bg-white/[0.03] rounded-lg border border-white/10 p-8 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-cyan-500/30 transition-all duration-300 overflow-hidden">
           <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-cyan-500/10 group-hover:bg-cyan-500/15 rounded-full blur-2xl pointer-events-none transition-all duration-300"></div>
 
           <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-cyan-500/10 mb-6 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
@@ -187,9 +187,10 @@ import { Icon } from 'astro-icon/components';
   <section
     id="features"
     class="py-12 md:py-20 relative overflow-hidden"
-    style={`background-image: url('${import.meta.env.BASE_URL}assets/gillie-ocean.png'); background-size: cover; background-position: center 40%;`}
   >
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+    <!-- Subtle gradient background instead of noisy image -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gillie-blue/[0.03] to-transparent pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gillie-blue/[0.04] rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="relative z-10 container mx-auto px-6 max-w-6xl">
       <div class="text-center mb-12 reveal">
@@ -275,7 +276,7 @@ import { Icon } from 'astro-icon/components';
         <div class="hidden md:block absolute top-8 left-[calc(33%+2rem)] right-[calc(33%+2rem)] h-px bg-gradient-to-r from-blue-500/30 via-cyan-500/30 to-teal-500/30"></div>
 
         <!-- Step 1 -->
-        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] hover:border-blue-500/30 transition-all duration-300 reveal reveal-delay-1 cursor-pointer">
+        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-blue-500/30 transition-all duration-300 reveal reveal-delay-1">
           <div class="flex items-center gap-4 mb-5">
             <div class="flex-shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white group-hover:scale-110 transition-transform duration-300">
               <Icon name="lucide:package" class="w-7 h-7" />
@@ -298,7 +299,7 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <!-- Step 2 -->
-        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] hover:border-cyan-500/30 transition-all duration-300 reveal reveal-delay-2 cursor-pointer">
+        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-cyan-500/30 transition-all duration-300 reveal reveal-delay-2">
           <div class="flex items-center gap-4 mb-5">
             <div class="flex-shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 text-white group-hover:scale-110 transition-transform duration-300">
               <Icon name="lucide:settings-2" class="w-7 h-7" />
@@ -327,7 +328,7 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <!-- Step 3 -->
-        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] hover:border-teal-500/30 transition-all duration-300 reveal reveal-delay-3 cursor-pointer">
+        <div class="group bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-teal-500/30 transition-all duration-300 reveal reveal-delay-3">
           <div class="flex items-center gap-4 mb-5">
             <div class="flex-shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 text-white group-hover:scale-110 transition-transform duration-300">
               <Icon name="lucide:play" class="w-7 h-7" />
@@ -446,14 +447,13 @@ import { Icon } from 'astro-icon/components';
           </div>
         </div>
 
-        <!-- Code block -->
-        <div class="reveal reveal-delay-2 bg-white/[0.03] rounded overflow-hidden border border-white/10 shadow-2xl">
-          <!-- Window chrome -->
-          <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 bg-white/[0.03]">
-            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-            <span class="ml-3 text-white/35 text-xs font-mono">api.gillie.ai · example.js</span>
+        <!-- Code block (terminal-window style) -->
+        <div class="reveal reveal-delay-2 terminal-window">
+          <div class="terminal-chrome">
+            <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
+            <span class="ml-auto text-white/35 text-xs font-mono">api.gillie.ai · example.js</span>
           </div>
           <pre class="text-sm text-white/60 p-6 overflow-x-auto leading-relaxed font-mono">{`// API usage example
 const response = await fetch(
@@ -474,6 +474,29 @@ const response = await fetch(
 
 const { response: reply } = await response.json();
 console.log(reply);`}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TERMINAL DEMO ──────────────────────────────────────────────── -->
+  <section class="py-12 md:py-16">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="reveal terminal-window">
+        <div class="terminal-chrome">
+          <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
+          <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
+          <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
+          <span class="ml-auto text-white/35 text-xs font-mono">~/workspace</span>
+        </div>
+        <div class="p-5 font-mono text-sm space-y-2">
+          <div><span class="text-green-400">❯</span> <span class="text-white">gillie "analyze sales report and summarize key trends"</span></div>
+          <div class="text-white/50 pl-2">Loading document... Processing with GPT-4o...</div>
+          <div class="text-cyan-400 pl-2">✓ Found 3 key trends:</div>
+          <div class="text-white/60 pl-4">1. Revenue up 23% YoY in Q4</div>
+          <div class="text-white/60 pl-4">2. LATAM region fastest growing (+45%)</div>
+          <div class="text-white/60 pl-4">3. SaaS subscriptions now 60% of total</div>
+          <div class="mt-2"><span class="text-green-400">❯</span> <span class="text-white/40 animate-blink">_</span></div>
         </div>
       </div>
     </div>

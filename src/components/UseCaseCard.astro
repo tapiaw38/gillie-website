@@ -21,10 +21,12 @@ const config = {
 const c = config[color];
 ---
 
-<div class="group bg-white/[0.03] rounded border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-0.5 transition-all duration-300">
+<div class="group relative bg-white/[0.03] rounded-lg border border-white/10 p-7 hover:bg-white/[0.05] hover:-translate-y-1 hover:border-white/20 transition-all duration-300 overflow-hidden">
+  <!-- Subtle glow on hover -->
+  <div class={`absolute inset-0 bg-gradient-to-br from-${color === 'blue' ? 'blue' : color === 'green' ? 'emerald' : color === 'purple' ? 'violet' : 'orange'}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
 
   <!-- Icon -->
-  <div class={`inline-flex items-center justify-center w-10 h-10 rounded ${c.iconBg} mb-5`}>
+  <div class={`relative inline-flex items-center justify-center w-10 h-10 rounded-lg ${c.iconBg} mb-5 group-hover:scale-105 transition-transform duration-300`}>
     <Icon name={c.icon} class={`w-5 h-5 ${c.accent}`} />
   </div>
 

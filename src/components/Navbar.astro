@@ -12,7 +12,7 @@ const navLinks = [
 ---
 
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="bg-black/90 backdrop-blur-xl border-b border-white/10">
+  <div class="bg-black/80 backdrop-blur-xl border-b border-white/[0.08]">
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
 
@@ -31,7 +31,7 @@ const navLinks = [
           {navLinks.map(({ href, icon, label }) => (
             <a
               href={href}
-              class="group relative flex items-center justify-center w-9 h-9 text-white/50 hover:text-white hover:bg-white/[0.06] rounded transition-all duration-200"
+              class="group relative flex items-center justify-center w-9 h-9 text-white/50 hover:text-white hover:bg-white/[0.06] rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gillie-blue/50"
               title={label}
             >
               <Icon name={icon} class="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
